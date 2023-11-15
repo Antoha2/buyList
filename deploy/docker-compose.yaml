@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+
+    environment:
+     POSTGRES_DB: buy
+     POSTGRES_USER: user
+     POSTGRES_PASSWORD: user
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./../db:/var/lib/postgresql
+
+
+# docker run --name buy-pg-latest -p 5432:5432 -e POSTGRES_USER=buyadmin -e POSTGRES_PASSWORD=buy -e POSTGRES_DB=buydb -v D:/code/buyList/docker/pg-data:/var/lib/pg -d postgres:latest
